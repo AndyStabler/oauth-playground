@@ -9,13 +9,21 @@ class AuthorisationServer
     @valid_grants = []
   end
 
+  # Public: Step 1 in the OAuth dance
+  #
+  # A user authorises the application
+  # if the request is valid, then an authorisation grant is returned.
   def authorise
-    # user authorises
+    # checks can go here (is the application registered for example)
     grant = generate_grant
     valid_grants << grant
     grant
   end
 
+  # Step 2 in the Oauth dance
+  #
+  # After authorising the application the authorisation server responds
+  # with an authorisation grant.
   def authenticate(grant)
     # check grant is correct
     # authenticate the client

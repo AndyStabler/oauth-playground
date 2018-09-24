@@ -3,7 +3,6 @@ require_relative "../authorisation_server.rb"
 
 describe AuthorisationServer do
   let(:authorisation_server) { AuthorisationServer.new }
-
   let(:grant) { authorisation_server.authorise }
   let(:access_token) { authorisation_server.authenticate grant }
 
