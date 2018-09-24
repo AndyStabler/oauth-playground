@@ -3,7 +3,7 @@ require "byebug"
 require_relative "../resource_server.rb"
 
 describe ResourceServer do
-  let(:resource_server) { ResourceServer.new resource }
+  let(:resource_server) { ResourceServer.new resource: resource, authorisation_server: AuthorisationServer.new }
   let(:resource) { "Juicy/sensitive data" }
 
   describe "#protected_resource" do
